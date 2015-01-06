@@ -3,7 +3,6 @@
 require 'json'
 require 'mechanize'
 require 'turbotlib'
-require 'byebug'
 
 def clean_string(s)
   s.gsub(/\A[[:space:]]*(.*?)[[:space:]]*\z/) { $1 }
