@@ -16,7 +16,7 @@ urls = {
 }
 
 urls.each do |category, url|
-  agent = Mechanize.new
+  agent = Mechanize.new { |m| m.ssl_version, m.verify_mode = 'SSLv3', OpenSSL::SSL::VERIFY_NONE }
   page = agent.get(url)
 
   number_of_pages = page.search('.pagerNumber a').last.text.to_i rescue 1
